@@ -11,9 +11,9 @@ Each folder represents a course. Courses with multiple projects are nested withi
 ## Projects
 
 - **Complete Godot 2D: Code Your Own 2D Games In Godot 4**
-      - **Speedy Saucer** — Project #1
-      - **Alien Attack** — Project #2
-      - **Martian Mike** — Project #3
+      * **Speedy Saucer** — Project #1
+      * **Alien Attack** — Project #2
+      * **Martian Mike** — Project #3
 
 - **Complete Godot 3D: Code Your Own 3D Games In Godot 4**
       - **Project Boost** — Project #1
