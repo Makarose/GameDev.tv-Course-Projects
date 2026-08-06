@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://irkkywnetvvw"]
+
+[ext_resource type="Texture2D" uid="uid://yeg58o8pohfp" path="res://Ninja Adventure - Asset Pack/Actor/Characters/SorcererBlack/SeparateAnim/Item.png" id="1_4rv27"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tytfa"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="SorcerorBlack" type="Sprite2D" parent="."]
+texture = ExtResource("1_4rv27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SorcerorBlack"]
+scale = Vector2(0.772, 0.95)
+shape = SubResource("CapsuleShape2D_tytfa")

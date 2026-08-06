@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://t250wekbow74"]
+
+[ext_resource type="Script" path="res://Scenes/Player/GameScene/SceneEntrance/scene_entrance.gd" id="1_37coi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whfhp"]
+size = Vector2(16, 11)
+
+[node name="SceneEntrance" type="Area2D"]
+position = Vector2(166, -104)
+collision_mask = 2
+script = ExtResource("1_37coi")
+next_scene = "res://Scenes/DungeonScene/dungeon_scene.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-36, 3.5)
+shape = SubResource("RectangleShape2D_whfhp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

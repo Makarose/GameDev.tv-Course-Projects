@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4fn5qev770dc"
+path="res://.godot/imported/Intro_Retro Adventure Song.wav-067c7dba03fc6a51c69d7bf4cd1ebbaf.sample"
+
+[deps]
+
+source_file="res://assets/Music/Intro_Retro Adventure Song.wav"
+dest_files=["res://.godot/imported/Intro_Retro Adventure Song.wav-067c7dba03fc6a51c69d7bf4cd1ebbaf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

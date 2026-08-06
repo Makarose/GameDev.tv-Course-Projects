@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://nf0tga53wrln"]
+
+[ext_resource type="Script" path="res://script/main.gd" id="1_7xypc"]
+[ext_resource type="Script" path="res://addons/my_custom_node/custom_button.gd" id="2_4c7ak"]
+[ext_resource type="Texture2D" uid="uid://j2ptxilrgo2v" path="res://addons/my_custom_node/icon.svg" id="3_d4hf1"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_7xypc")
+
+[node name="CustomButton" type="Button" parent="."]
+offset_left = -180.0
+offset_right = -55.0
+offset_bottom = 31.0
+scale = Vector2(1.10933, 1.57197)
+text = "Custom Button
+"
+script = ExtResource("2_4c7ak")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(862, 1478)
+texture = ExtResource("3_d4hf1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.0666666, 1, 0, 1)
+position = Vector2(562, 1478)
+texture = ExtResource("3_d4hf1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.966667, 0, 1, 1)
+position = Vector2(1462, 1478)
+texture = ExtResource("3_d4hf1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(1162, 1478)
+texture = ExtResource("3_d4hf1")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+modulate = Color(0.95, 1, 0, 1)
+position = Vector2(1762, 1478)
+texture = ExtResource("3_d4hf1")

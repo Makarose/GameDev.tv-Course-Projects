@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmrowyk5xly7t"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_nc52d"]
+[ext_resource type="Texture2D" uid="uid://ddbc6qclvbc3r" path="res://purple.png" id="2_70nw7"]
+[ext_resource type="PackedScene" uid="uid://burx7qsl6uhdp" path="res://player.tscn" id="3_l6y8l"]
+[ext_resource type="Texture2D" uid="uid://byig7t2n2qjj8" path="res://darkPurple.png" id="4_uuapg"]
+
+[sub_resource type="FontFile" id="FontFile_2gu2d"]
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qray1"]
+font = SubResource("FontFile_2gu2d")
+font_size = 15
+font_color = Color(1, 0.819608, 1, 1)
+outline_size = 6
+outline_color = Color(0.533333, 0.0156863, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhiw4"]
+font = SubResource("FontFile_2gu2d")
+font_size = 15
+font_color = Color(1, 0.819608, 1, 1)
+outline_size = 6
+outline_color = Color(0.533333, 0.0156863, 1, 1)
+
+[node name="level1" type="Node2D"]
+script = ExtResource("1_nc52d")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -2
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_70nw7")
+stretch_mode = 1
+
+[node name="Start" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 464.0
+offset_top = 257.0
+offset_right = 527.0
+offset_bottom = 299.0
+scale = Vector2(2.64891, 2.66856)
+text = "Start"
+label_settings = SubResource("LabelSettings_qray1")
+
+[node name="Finish" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 1244.0
+offset_top = -172.0
+offset_right = 1322.0
+offset_bottom = -130.0
+rotation = -1.82716
+scale = Vector2(2.64891, 2.66856)
+text = "Finish
+"
+label_settings = SubResource("LabelSettings_qray1")
+
+[node name="Tutorial" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 59.0
+offset_top = 284.0
+offset_right = 257.0
+offset_bottom = 332.0
+rotation = 0.0139456
+scale = Vector2(1.48976, 6.29061)
+text = "                Tutorial 
+
+Get the space ship to the end. 
+"
+label_settings = SubResource("LabelSettings_fhiw4")
+
+[node name="Player" parent="." instance=ExtResource("3_l6y8l")]
+position = Vector2(553, 450)
+
+[node name="CollisionShape2D" parent="Player" index="0"]
+z_index = 1
+position = Vector2(0, 6)
+
+[node name="Sprite2D" parent="Player" index="1"]
+position = Vector2(0, 6)
+
+[node name="Maze" type="Area2D" parent="."]
+z_index = -50
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze"]
+z_index = -45
+scale = Vector2(1.00057, 0.998969)
+polygon = PackedVector2Array(390, 237, 332, 397, 407, 597, 823, 1069, 1495, 1110, 1770, 899, 1642, 616, 1415, 578, 1113, 499, 1159, 299, 1664, 200, 2250, 159, 2170, -260, 1789, -373, 1155, -487, 1245, -71, 1770, -181, 1970, -139, 2001, -7, 1593, 30, 1072, 129, 992, 219, 906, 574, 1498, 706, 1566, 838, 1400, 967, 887, 937, 668, 455, 762, 251)
+
+[node name="Polygon2D" type="Polygon2D" parent="Maze"]
+texture_repeat = 2
+texture = ExtResource("4_uuapg")
+polygon = PackedVector2Array(386, 241, 332, 397, 407, 597, 823, 1069, 1495, 1110, 1770, 899, 1642, 616, 1415, 578, 1113, 499, 1159, 299, 1664, 200, 2250, 159, 2170, -260, 1789, -373, 1155, -487, 1245, -71, 1770, -181, 1970, -139, 2001, -7, 1593, 30, 1072, 129, 992, 219, 906, 574, 1498, 706, 1566, 838, 1400, 967, 887, 937, 671, 458, 758, 255)
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
+
+[editable path="Player"]

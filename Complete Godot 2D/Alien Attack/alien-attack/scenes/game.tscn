@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://delb1al0ax8qm"]
+
+[ext_resource type="Texture2D" uid="uid://btcf52qbi37lu" path="res://assets/textures/bg.png" id="1_5udlc"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_u08gr"]
+[ext_resource type="PackedScene" uid="uid://tck3o02b8fua" path="res://scenes/player.tscn" id="2_gycbf"]
+[ext_resource type="PackedScene" uid="uid://hlmyw1w1bssy" path="res://scenes/hud.tscn" id="2_y8m7f"]
+[ext_resource type="AudioStream" uid="uid://cgmevvtsjena3" path="res://assets/Music/main loop_Retro Adventure Song.wav" id="3_6kh1n"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="3_upjf8"]
+[ext_resource type="PackedScene" uid="uid://3dcau88qh6ah" path="res://scenes/enemyy_spawner.tscn" id="4_gi81k"]
+[ext_resource type="AudioStream" uid="uid://crsactujlv1p3" path="res://assets/audio/hit.wav" id="8_pxewn"]
+[ext_resource type="AudioStream" uid="uid://dbppjh4660srn" path="res://assets/audio/explode.wav" id="9_y51wg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mb8l"]
+size = Vector2(20, 26.5411)
+
+[node name="Game" type="Node2D"]
+z_index = 5
+script = ExtResource("1_u08gr")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_y8m7f")]
+z_index = 1
+script = ExtResource("3_upjf8")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1300.0
+offset_bottom = 743.0
+texture = ExtResource("1_5udlc")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_gycbf")]
+position = Vector2(91, 332)
+floor_block_on_wall = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6kh1n")
+
+[node name="Enemy_spawner" parent="." instance=ExtResource("4_gi81k")]
+
+[node name="Deathzone" type="Area2D" parent="."]
+position = Vector2(-127, 2)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(-2, 362)
+scale = Vector2(2.6, 29.2)
+shape = SubResource("RectangleShape2D_0mb8l")
+
+[node name="EnemySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pxewn")
+
+[node name="PlayerHitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_y51wg")
+
+[connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
+[connection signal="enemy_spawned" from="Enemy_spawner" to="." method="_on_enemy_spawner_enemy_spawned"]
+[connection signal="path_enemy_spawned" from="Enemy_spawner" to="." method="_on_enemy_spawner_path_enemy_spawned"]
+[connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
