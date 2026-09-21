@@ -1,6 +1,6 @@
 # GameDev.tv Course Projects
 
-A collection of Godot tutorial projects used to learn game development fundamentals and Godot's engine.
+A collection of Godot tutorial projects used to learn game development fundamentals and Godot.
 
 ## About
 
