@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dohd0kdg4t8pw"]
+
+[ext_resource type="Script" uid="uid://bt6c5vs2cb8pu" path="res://Scenes/Game Scenes/main_menu.gd" id="1_2qg6n"]
+[ext_resource type="Texture2D" uid="uid://ben3nfjr0rvp5" path="res://Assets/UI Art/MainMenuBackground.png" id="2_jqi2q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0p7h4"]
+font_size = 64
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqi2q"]
+bg_color = Color(0.36078432, 0.6862745, 0.39215687, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+border_blend = true
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+corner_detail = 16
+shadow_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+shadow_size = 6
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpjyy"]
+bg_color = Color(0.16110763, 0.33669722, 0.17848441, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+border_blend = true
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+corner_detail = 16
+shadow_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+shadow_size = 6
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50ve5"]
+bg_color = Color(0.36078432, 0.6862745, 0.39215687, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+border_blend = true
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+corner_detail = 16
+shadow_color = Color(0.009737985, 0.12032693, 0.089131586, 1)
+shadow_size = 6
+shadow_offset = Vector2(5, 5)
+
+[node name="MainMenu" type="Control" unique_id=1854387150]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2qg6n")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1139910821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jqi2q")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TitleLabel" type="Label" parent="." unique_id=555090035]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.5
+offset_top = 85.0
+offset_right = 320.5
+offset_bottom = 173.0
+grow_horizontal = 2
+text = "Awesome Adventure"
+label_settings = SubResource("LabelSettings_0p7h4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1110296167]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -291.0
+offset_right = 121.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer" unique_id=925484470]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
+text = "Start Game"
+
+[node name="QuitGameButton" type="Button" parent="VBoxContainer" unique_id=240407176]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
