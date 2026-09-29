@@ -1,12 +1,10 @@
-[gd_scene format=3 uid="uid://dohd0kdg4t8pw"]
+[gd_scene format=3 uid="uid://dfs2dvkvh7wc7"]
 
-[ext_resource type="Script" uid="uid://bt6c5vs2cb8pu" path="res://Scenes/Game Scenes/main_menu.gd" id="1_2qg6n"]
-[ext_resource type="Texture2D" uid="uid://ben3nfjr0rvp5" path="res://Assets/UI Art/MainMenuBackground.png" id="2_jqi2q"]
+[ext_resource type="Script" uid="uid://c2nq0uuyy0qon" path="res://Scenes/difficulty_select.gd" id="1_gcggo"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0p7h4"]
-font_size = 64
-outline_size = 5
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_a2foq"]
+font_size = 40
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqi2q"]
 bg_color = Color(0.36078432, 0.6862745, 0.39215687, 1)
@@ -59,75 +57,82 @@ shadow_color = Color(0.009737985, 0.12032693, 0.089131586, 1)
 shadow_size = 6
 shadow_offset = Vector2(5, 5)
 
-[node name="MainMenu" type="Control" unique_id=1854387150]
+[node name="DifficultySelect" type="Control" unique_id=2049334335]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2qg6n")
+size_flags_horizontal = 4
+script = ExtResource("1_gcggo")
 
-[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1139910821]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_jqi2q")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="TitleLabel" type="Label" parent="." unique_id=555090035]
+[node name="Label" type="Label" parent="." unique_id=1414537996]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.5
-offset_top = 85.0
-offset_right = 320.5
-offset_bottom = 173.0
+offset_left = -172.5
+offset_top = 80.0
+offset_right = 172.5
+offset_bottom = 135.0
 grow_horizontal = 2
-text = "Awesome Adventure"
-label_settings = SubResource("LabelSettings_0p7h4")
+text = "Select a Difficulty!"
+label_settings = SubResource("LabelSettings_a2foq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1110296167]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2146347068]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -291.0
-offset_right = 121.0
-offset_bottom = -103.0
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -99.0
+offset_right = 181.0
+offset_bottom = 99.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-alignment = 1
+grow_vertical = 2
+theme_override_constants/separation = 10
 
-[node name="StartGameButton" type="Button" parent="VBoxContainer" unique_id=925484470]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1148292792]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Here are the difficulties..."
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2047895992]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
+text = "Super Easy"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=384763447]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
+text = "Easy"
+
+[node name="NormalButton" type="Button" parent="VBoxContainer" unique_id=425282880]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
-theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
-text = "Start Game"
+text = "Normal"
 
-[node name="QuitGameButton" type="Button" parent="VBoxContainer" unique_id=240407176]
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1697593041]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.03137255, 0.23137255, 0.18039216, 1)
-theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
-text = "Quit Game"
+text = "Hard"
 
-[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[node name="Button5" type="Button" parent="VBoxContainer" unique_id=1039840700]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Button")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqi2q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bpjyy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50ve5")
+text = "ULTRA HARD!!!"
