@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wr470p5fgxxb"]
 
 [ext_resource type="Script" uid="uid://rfeje82i4ob8" path="res://Scenes/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="FontFile" uid="uid://cqmj0lgj5r3u1" path="res://Assets/UI Art/BaksoSapi.otf" id="2_k0w1u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2foq"]
 font_size = 40
@@ -42,6 +43,7 @@ offset_top = 26.5
 offset_right = 132.0
 offset_bottom = 81.5
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Game Paused"
 label_settings = SubResource("LabelSettings_a2foq")
 
@@ -67,11 +69,13 @@ theme_override_constants/separation = 10
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Resume Game"
 
 [node name="QuitButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1883871064]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_k0w1u")
 text = "Exit to Desktop"
 
 [connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/ResumeButton" to="." method="unpause_game"]
