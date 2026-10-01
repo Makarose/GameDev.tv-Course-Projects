@@ -32,31 +32,6 @@ offset_bottom = 120.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=1168169717]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -124.5
-offset_right = -14.0
-offset_bottom = -18.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="ResumeButton" type="Button" parent="Control/Panel/VBoxContainer" unique_id=795704161]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Resume Game"
-
-[node name="QuitButton" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1883871064]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Exit to Desktop"
-
 [node name="Label" type="Label" parent="Control/Panel" unique_id=1936991638]
 layout_mode = 1
 anchors_preset = 5
@@ -70,5 +45,34 @@ grow_horizontal = 2
 text = "Game Paused"
 label_settings = SubResource("LabelSettings_a2foq")
 
-[connection signal="pressed" from="Control/Panel/VBoxContainer/ResumeButton" to="." method="unpause_game"]
-[connection signal="pressed" from="Control/Panel/VBoxContainer/QuitButton" to="." method="quit_game"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=1212878213]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -140.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer" unique_id=1168169717]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ResumeButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=795704161]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume Game"
+
+[node name="QuitButton" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=1883871064]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit to Desktop"
+
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/ResumeButton" to="." method="unpause_game"]
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/QuitButton" to="." method="quit_game"]

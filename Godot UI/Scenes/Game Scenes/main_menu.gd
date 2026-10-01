@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	%StartGameButton.garb_focus(true)
+	%StartGameButton.grab_focus(true)
 
 
 func _on_start_game_button_pressed() -> void:

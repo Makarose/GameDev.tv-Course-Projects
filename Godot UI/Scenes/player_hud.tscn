@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://w745nrn0xqwl"]
+
+[ext_resource type="Script" uid="uid://xkakp3s2rb3g" path="res://Scenes/player_hud.gd" id="1_iori6"]
+[ext_resource type="Texture2D" uid="uid://c5lomjbx54f0j" path="res://Assets/Game Art/2DPlatformerTilemap.png" id="1_pk5j4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2foq"]
+atlas = ExtResource("1_pk5j4")
+region = Rect2(11, 140, 41, 44)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2foq"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=1953207659]
+script = ExtResource("1_iori6")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=494080137]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 89.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1498252784]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1023679744]
+layout_mode = 2
+
+[node name="CoinTextureRect" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer" unique_id=435415843]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2foq")
+stretch_mode = 2
+
+[node name="CoinCounterLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer" unique_id=100639002]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10"
+label_settings = SubResource("LabelSettings_a2foq")
