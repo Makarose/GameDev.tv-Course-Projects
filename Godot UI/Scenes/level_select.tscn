@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://dtuh662h0cnx0"]
+
+[ext_resource type="Texture2D" uid="uid://bfwd3c6tqmfyt" path="res://Assets/UI Art/Panel Textures/panel_grey.svg" id="1_1fiak"]
+[ext_resource type="Theme" uid="uid://ci533rfydd5sv" path="res://Themes/blue_theme.tres" id="1_nkys2"]
+[ext_resource type="Texture2D" uid="uid://ben3nfjr0rvp5" path="res://Assets/UI Art/MainMenuBackground.png" id="2_lx4vd"]
+[ext_resource type="Script" uid="uid://bstus5fi3x7sc" path="res://Scenes/Game Scenes/UI Scripts/button_expand_animation.gd" id="4_2sqnl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0w1u"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_1fiak")
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 40.0
+
+[node name="LevelSelect" type="Control" unique_id=1222948192]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nkys2")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=233972600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lx4vd")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=98364033]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -159.5
+offset_right = 151.0
+offset_bottom = 159.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k0w1u")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1551800100]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=258782758]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1757673374]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Select a level!"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1324806436]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 4
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=527533001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_visual_only = false
+text = "1"
+script = ExtResource("4_2sqnl")
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1008996238]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+script = ExtResource("4_2sqnl")
+
+[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=144470362]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+script = ExtResource("4_2sqnl")
+
+[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=2088061607]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+script = ExtResource("4_2sqnl")
+
+[node name="Button5" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1036716309]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+script = ExtResource("4_2sqnl")
+
+[node name="Button6" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=601592095]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6"
+script = ExtResource("4_2sqnl")
+
+[node name="Button7" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1035155279]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+script = ExtResource("4_2sqnl")
+
+[node name="Button8" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=737733367]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+script = ExtResource("4_2sqnl")
+
+[node name="Button9" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=29576750]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+script = ExtResource("4_2sqnl")
+
+[node name="Button10" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=772336281]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10"
+script = ExtResource("4_2sqnl")
+
+[node name="Button11" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=167865651]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"GoldButton"
+text = "B1"
+script = ExtResource("4_2sqnl")
+
+[node name="Button12" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1217619811]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"GoldButton"
+text = "b2"
+script = ExtResource("4_2sqnl")

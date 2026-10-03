@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfs2dvkvh7wc7"]
 
-[ext_resource type="Script" uid="uid://c2nq0uuyy0qon" path="res://Scenes/difficulty_select.gd" id="1_gcggo"]
+[ext_resource type="Script" uid="uid://c2nq0uuyy0qon" path="res://Scenes/Game Scenes/UI Scripts/difficulty_select.gd" id="1_gcggo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2foq"]
 font_size = 40

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://coxrkki62gcmn" path="res://Scenes/Game Scenes/Premade Scripts/2d_platformer_sign.gd" id="1_lgsb0"]
 [ext_resource type="Texture2D" uid="uid://c5lomjbx54f0j" path="res://Assets/Game Art/2DPlatformerTilemap.png" id="1_v6yge"]
 [ext_resource type="Shader" uid="uid://dqqywweh6nxei" path="res://Scenes/Game Scenes/Premade Scripts/canvasgroup_outline.gdshader" id="1_xvye8"]
+[ext_resource type="Theme" uid="uid://ci533rfydd5sv" path="res://Themes/blue_theme.tres" id="4_sttjs"]
+[ext_resource type="Texture2D" uid="uid://bfwd3c6tqmfyt" path="res://Assets/UI Art/Panel Textures/panel_grey.svg" id="5_c7t1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j1cq"]
 size = Vector2(64, 64)
@@ -16,10 +18,16 @@ shader_parameter/line_thickness = 0
 atlas = ExtResource("1_v6yge")
 region = Rect2(845, 390, 64, 64)
 
-[sub_resource type="FontVariation" id="FontVariation_tnbgl"]
-
-[sub_resource type="FontVariation" id="FontVariation_g04rm"]
-spacing_space = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw4i0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("5_c7t1v")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [node name="Sign" type="Area2D" unique_id=1676996122]
 script = ExtResource("1_lgsb0")
@@ -36,16 +44,23 @@ position = Vector2(0, -32)
 texture = SubResource("AtlasTexture_1274x")
 
 [node name="Panel" type="Panel" parent="." unique_id=1298677256]
-offset_left = -128.0
-offset_top = -384.0
-offset_right = 128.0
+offset_left = -256.0
+offset_top = -512.0
+offset_right = 256.0
 offset_bottom = -128.0
+offset_transform_enabled = true
+theme = ExtResource("4_sttjs")
+theme_override_styles/panel = SubResource("StyleBoxTexture_vw4i0")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=363879363]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 8
@@ -54,12 +69,11 @@ theme_override_constants/margin_right = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=570849172]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 20
 
 [node name="TitleLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=2039694106]
 layout_mode = 2
-theme_override_fonts/normal_font = SubResource("FontVariation_tnbgl")
-theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "TITLE TEXT"
 fit_content = true
@@ -67,7 +81,7 @@ horizontal_alignment = 1
 
 [node name="BodyLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=1267817229]
 layout_mode = 2
-theme_override_fonts/normal_font = SubResource("FontVariation_g04rm")
+theme_override_font_sizes/normal_font_size = 30
 text = "BODY BOYD BODY DBODYD BDODBDOIYDBODBUYD"
 fit_content = true
 

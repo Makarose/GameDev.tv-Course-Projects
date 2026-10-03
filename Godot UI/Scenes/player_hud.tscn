@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w745nrn0xqwl"]
 
-[ext_resource type="Script" uid="uid://xkakp3s2rb3g" path="res://Scenes/player_hud.gd" id="1_iori6"]
+[ext_resource type="Script" uid="uid://xkakp3s2rb3g" path="res://Scenes/Game Scenes/UI Scripts/player_hud.gd" id="1_iori6"]
 [ext_resource type="Texture2D" uid="uid://c5lomjbx54f0j" path="res://Assets/Game Art/2DPlatformerTilemap.png" id="1_pk5j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2foq"]
