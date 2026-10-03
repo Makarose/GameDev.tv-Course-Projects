@@ -26,6 +26,8 @@ Each folder represents a course. Courses with multiple projects are nested withi
 
 - **Godot 4: Create and Master Custom Plugins**
 
+- **Godot UI: Build Reactive, Animated Interfaces**
+
 
 ## Engine
 
